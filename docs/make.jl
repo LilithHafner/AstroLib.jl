@@ -1,12 +1,10 @@
 using Documenter, AstroLib
 
+include("pages.jl")
 makedocs(
     modules = [AstroLib],
     sitename = "AstroLib",
-    pages    = [
-        "Introduction"   => "index.md",
-        "Reference"      => "ref.md",
-    ]
+    pages=pages
 )
 
 deploydocs(
