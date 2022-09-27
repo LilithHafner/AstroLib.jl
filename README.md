@@ -2,7 +2,7 @@
 
 | **Documentation**                       | **Package Evaluator** | **Build Status**                          | **Code Coverage**               |
 |:---------------------------------------:|:-------------------------------------:|:-----------------------------------------:|:-------------------------------:|
-| [![][docs-stable-img]][docs-stable-url] [![][docs-dev-img]][docs-dev-url] | [![][pkgeval-img]][pkgeval-url]       | [![Build Status][build-img]][build-url] | [![][coveral-img]][coveral-url] [![][codecov-img]][codecov-url] |
+| [![][docs-stable-img]][docs-stable-url] [![][docs-dev-img]][docs-dev-url] | [![][pkgeval-img]][pkgeval-url]       | [![Build Status][build-img]][build-url] | [![][codecov-img]][codecov-url] |
 
 Goal
 ----
@@ -230,9 +230,6 @@ author is Mosè Giordano.
 
 [build-img]: https://github.com/juliaastro/AstroLib.jl/workflows/CI/badge.svg?branch=master
 [build-url]: https://github.com/juliaastro/AstroLib.jl/actions
-
-[coveral-img]: https://coveralls.io/repos/github/JuliaAstro/AstroLib.jl/badge.svg?branch=master
-[coveral-url]: https://coveralls.io/github/JuliaAstro/AstroLib.jl?branch=master
 
 [codecov-img]: https://codecov.io/gh/JuliaAstro/AstroLib.jl/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/JuliaAstro/AstroLib.jl
