@@ -69,7 +69,7 @@ aitoff(lb::Tuple{Real, Real}) = aitoff(lb...)
 
 function aitoff(l::AbstractArray{L}, b::AbstractArray{B}) where {L<:Real,B<:Real}
     if length(l) != length(b)
-        throw(ArgumentError("l and b arrays must have the same length"))
+        throw(DimensionMismatch("l and b arrays must have the same length"))
     end
     typel = float(L)
     x = similar(l, typel)
