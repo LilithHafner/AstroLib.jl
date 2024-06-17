@@ -82,18 +82,18 @@ end
 
 # New type representation
 function show(io::IO, pl::Planet)
-    println(io, "Planet:                    ", uppercasefirst(pl.name))
-    println(io, "mean radius:               ", pl.radius, " m")
-    println(io, "equatorial radius:         ", pl.eqradius, " m")
-    println(io, "polar radius:              ", pl.polradius, " m")
-    println(io, "mass:                      ", pl.mass, " kg")
-    println(io, "eccentricity:              ", pl.ecc)
-    println(io, "semi-major axis:           ", pl.axis, " m")
-    println(io, "period:                    ", pl.period, " s")
-    println(io, "inclination                ", pl.inc, " °")
-    println(io, "longitude of ascending node", pl.asc_long, " °")
-    println(io, "longitude of perihelion    ", pl.per_long, " °")
-    print(io,   "mean longitude             ", pl.mean_long, " °")
+    println(io, "Planet:                      ", uppercasefirst(pl.name))
+    println(io, "mean radius:                 ", pl.radius, " m")
+    println(io, "equatorial radius:           ", pl.eqradius, " m")
+    println(io, "polar radius:                ", pl.polradius, " m")
+    println(io, "mass:                        ", pl.mass, " kg")
+    println(io, "eccentricity:                ", pl.ecc)
+    println(io, "semi-major axis:             ", pl.axis, " m")
+    println(io, "period:                      ", pl.period, " s")
+    println(io, "inclination:                 ", pl.inc, " °")
+    println(io, "longitude of ascending node: ", pl.asc_long, " °")
+    println(io, "longitude of perihelion:     ", pl.per_long, " °")
+    print(io,   "mean longitude:              ", pl.mean_long, " °")
 end
 
 export Observatory, Planet

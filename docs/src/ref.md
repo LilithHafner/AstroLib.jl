@@ -68,14 +68,18 @@ The list of Solar System planets, from Mercury to Pluto, is available with `Astr
 
 ```julia
 julia> AstroLib.planets["mercury"]
-Planet:            Mercury
-mean radius:       2.4397e6 m
-equatorial radius: 2.4397e6 m
-polar radius:      2.4397e6 m
-mass:              3.3011e23 kg
-eccentricity:      0.20563069
-semi-major axis:   5.790905e10 m
-period:            5.790905e10 s
+Planet:                      Mercury
+mean radius:                 2.4397e6 m
+equatorial radius:           2.4397e6 m
+polar radius:                2.4397e6 m
+mass:                        3.3011e23 kg
+eccentricity:                0.20563593
+semi-major axis:             5.790922654152439e10 m
+period:                      7.60053024e6 s
+inclination:                 7.00497902 °
+longitude of ascending node: 48.33076593 °
+longitude of perihelion:     77.45779628 °
+mean longitude:              252.2503235 °
 
 julia> AstroLib.planets["mars"].eqradius
 3.3962e6
