@@ -2,10 +2,13 @@
 # Copyright (C) 2016 Mosè Giordano.
 
 using AstroLib
-using Test, Dates
+using Test
+using Dates
 
-include("utils-tests.jl")
-include("misc-tests.jl")
+@testset "AstroLib" begin
+    include("utils-tests.jl")
+    include("misc-tests.jl")
+end
 
 # Dummy calls to "show" for new data types, just to increase code coverage.
 show(devnull, AstroLib.planets["mercury"])
