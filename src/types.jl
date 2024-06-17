@@ -13,7 +13,7 @@ Type holding information about an observing site.  Its fields are:
 * `altitude`: altitude of the site in meters
 * `tz`: the number of hours of offset from UTC
 """
-struct Observatory
+Base.@kwdef struct Observatory
     name::String
     latitude::Float64
     longitude::Float64
@@ -36,8 +36,8 @@ function show(io::IO, obs::Observatory)
     println(io, "longitude:   ", obs.longitude, "°E")
     println(io, "altitude:    ", obs.altitude, " m")
     tzdec, tzint = modf(obs.tz)
-    print(io,   "time zone:   ", @sprintf("UTC%+d", tzint),
-          tzdec == 0 ? "" : @sprintf(":%d", abs(tzdec*60)))
+    tzstr = tzdec == 0 ? "" : @sprintf(":%d", abs(tzdec*60))
+    print(io,   "time zone:   ", @sprintf("UTC%+d", tzint), tzstr)
 end
 
 ##### Planet
@@ -68,7 +68,7 @@ Position characteristics (epoch J2000):
 * `per_long`: longitude of perihelion in degrees
 * `mean_long`: mean longitude in degrees
 """
-struct Planet
+Base.@kwdef struct Planet
     name::String
     radius::Float64
     eqradius::Float64
