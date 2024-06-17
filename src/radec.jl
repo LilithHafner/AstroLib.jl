@@ -14,7 +14,7 @@ function _radec(ra::T, dec::T, hours::Bool) where {T<:AbstractFloat}
 end
 
 """
-    radec(ra::Real, dec::Real[, hours=true]) -> ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds
+    radec(ra::Real, dec::Real[, hours=false]) -> ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds
 
 ### Purpose ###
 

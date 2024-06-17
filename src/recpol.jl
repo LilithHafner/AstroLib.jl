@@ -10,7 +10,7 @@ function _recpol(x::T, y::T, degrees::Bool) where {T<:AbstractFloat}
 end
 
 """
-    recpol(x, y[, degrees=true]) -> radius, angle
+    recpol(x, y[, degrees=false]) -> radius, angle
 
 ### Purpose ###
 
