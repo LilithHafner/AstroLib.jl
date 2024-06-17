@@ -69,7 +69,7 @@ julia> @doc FunctionName
 
 ## Related Projects
 
-This is not the only effort to bundle astronomical functions written in Julia language. Other packages useful for more specific purposes are available at [JuliaAstro](https://juliaastro.github.io/). A list of other packages is available [here](https://github.com/svaksha/Julia.jl/blob/master/Astronomy.md).
+This is not the only effort to bundle astronomical functions written in Julia language. Other packages useful for more specific purposes are available at [JuliaAstro](https://juliaastro.github.io/).
 
 Because of this, some of IDL AstroLib’s utilities are not provided in `AstroLib.jl` as they are already present in other Julia packages. Here is a list of such utilities:
 
