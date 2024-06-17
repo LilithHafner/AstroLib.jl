@@ -27,8 +27,8 @@ Converts air wavelengths to vacuum wavelengths.
 ### Explanation ###
 
 Wavelengths are corrected for the index of refraction of air under standard conditions.
-Wavelength values below \$2000 Å\$ will *not* be altered, take care within \$[1 Å, 2000
-Å]\$.  Uses relation of Ciddor (1996).
+Wavelength values below ``2000 Å`` will *not* be altered, take care within
+``[1 Å, 2000 Å]``.  Uses relation of Ciddor (1996).
 
 ### Arguments ###
 

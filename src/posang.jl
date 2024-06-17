@@ -29,8 +29,7 @@ function posang(units::Integer, ra1::T, dec1::T, ra2::T, dec2::T) where {T<:Abst
     end
     sin_radif, cos_radif = sincos(ra2_rad - ra1_rad)
     sin_dec1, cos_dec1 = sincos(dec1_rad)
-    angle = atan(sin_radif, cos_dec1 * tan(dec2_rad) -
-                  sin_dec1 * cos_radif)
+    angle = atan(sin_radif, cos_dec1 * tan(dec2_rad) - sin_dec1 * cos_radif)
     if units == 0
         return angle
     else
@@ -99,7 +98,7 @@ julia> posang(1, ten(13, 25, 13.5), ten(54, 59, 17), ten(13, 23, 55.5), ten(54, 
 * The function `sphdist` provides an alternate method of computing a spherical
  distance.
 * Note that `posang` is not commutative: the position angle between A and B is
-  \$\\theta\$, then the position angle between B and A is \$180 + \\theta\$.
+  ``θ``, then the position angle between B and A is ``180 + θ``.
 
 Code of this function is based on IDL Astronomy User's Library.
 """

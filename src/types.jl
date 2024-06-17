@@ -19,11 +19,14 @@ struct Observatory
     longitude::Float64
     altitude::Float64
     tz::Float64 # There are non-integer time zones
+
     # Define constructor that automatically converts longitude and latitude with
     # "ten", for convenience.
-    Observatory(name, lat, long, alt, tz) =
-        new(String(name), Float64(ten(lat)), Float64(ten(long)),
-            Float64(float(alt)), Float64(ten(tz)))
+    Observatory(name, lat, long, altitude, tz) =
+        new(String(name),
+            Float64(ten(lat)), Float64(ten(long)),
+            Float64(float(altitude)),
+            Float64(ten(tz)))
 end
 
 # New type representation

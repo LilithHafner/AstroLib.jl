@@ -28,8 +28,8 @@ Return the illuminated fraction of the Moon at given Julian date(s).
 
 ### Output ###
 
-The illuminated fraction \$k\$ of Moon's disk, with \$0 \\leq k \\leq 1\$. \$k
-= 0\$ indicates a new moon, while \$k = 1\$ stands for a full moon.
+The illuminated fraction ``k`` of Moon's disk, with ``0 ≤ k ≤ 1``. ``k = 0``
+indicates a new moon, while ``k = 1`` stands for a full moon.
 
 ### Method ###
 

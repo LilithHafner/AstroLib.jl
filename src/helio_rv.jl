@@ -55,7 +55,7 @@ date(s) specified by `jd`.
   NB: the functions `juldate` and `helio_jd` return a reduced HJD (HJD - 2400000)
   and so T and P must be specified in the same fashion.
 
-- Plot two cycles of an eccentric orbit, \$e=0.6\$, \$\\omega=45\\degree\$ for
+- Plot two cycles of an eccentric orbit, ``e = 0.6``, ``ω = 45°`` for
   both components of a binary star.  Use
   [PyPlot.jl](https://github.com/JuliaPy/PyPlot.jl) for plotting.
 

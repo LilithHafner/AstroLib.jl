@@ -37,8 +37,9 @@ degrees for declination.
 ### Output ###
 
 A 6-tuple of `AbstractFloat`:
-
-    (ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds)
+```
+(ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds)
+```
 
 If `ra` and `dec` are arrays, also each element of the output 6-tuple are arrays
 of the same dimension.

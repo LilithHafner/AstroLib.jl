@@ -56,7 +56,7 @@ julia> zenpos(jdcnv(2016, 05, 05, 13, 41), ten(35,0,42), ten(135,46,6))
 
 Code of this function is based on IDL Astronomy User's Library.
 """
-zenpos
+function zenpos end
 
 _zenpos(latitude::T, longitude::T, rest...) where {T<:AbstractFloat} =
     (ct2lst(longitude, rest...) / 12 * pi, deg2rad(latitude))

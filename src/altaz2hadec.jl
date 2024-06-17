@@ -70,9 +70,10 @@ julia> ha, dec = altaz2hadec(ten(59,05,10), ten(133,18,29), 43.07833)
 (336.6828582472844, 19.182450965120402)
 ```
 The widely available XEPHEM code gets:
-
-    Hour Angle = 336.683
-    Declination = 19.1824
+```plain
+Hour Angle = 336.683
+Declination = 19.1824
+```
 
 ### Notes ###
 

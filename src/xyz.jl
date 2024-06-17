@@ -135,16 +135,16 @@ end
 
 ### Purpose ###
 
-Calculate geocentric \$x\$, \$y\$, and \$z\$ and velocity coordinates of the
+Calculate geocentric ``x``, ``y``, and ``z`` and velocity coordinates of the
 Sun.
 
 ### Explanation ###
 
-Calculates geocentric \$x\$, \$y\$, and \$z\$ vectors and velocity coordinates
-(\$dx\$, \$dy\$ and \$dz\$) of the Sun.  (The positive \$x\$ axis is directed
-towards the equinox, the \$y\$-axis, towards the point on the equator at right
-ascension 6h, and the \$z\$ axis toward the north pole of the equator).  Typical
-position accuracy is \$<10^{-4}\$ AU (15000 km).
+Calculates geocentric ``x``, ``y``, and ``z`` vectors and velocity coordinates
+(``dx``, ``dy`` and ``dz``) of the Sun.  (The positive ``x`` axis is directed
+towards the equinox, the ``y``-axis, towards the point on the equator at right
+ascension 6h, and the ``z`` axis toward the north pole of the equator).  Typical
+position accuracy is ``<10^{-4}`` AU (15000 km).
 
 ### Arguments ###
 
@@ -183,23 +183,25 @@ julia> xyz(jd + 64/86400, 2000)
 
 Compare to Astronomical Almanac (1999 page C20)
 
-                x  (AU)        y  (AU)     z (AU)
-    xyz:      0.51456871   -0.76963263  -0.33376880
-    AA:       0.51453130   -0.7697110   -0.3337152
-    abs(err): 0.00003739    0.00007839   0.00005360
-    abs(err)
-        (km):   5609          11759         8040
+```plain
+            x  (AU)        y  (AU)     z (AU)
+xyz:      0.51456871   -0.76963263  -0.33376880
+AA:       0.51453130   -0.7697110   -0.3337152
+abs(err): 0.00003739    0.00007839   0.00005360
+abs(err)
+    (km):   5609          11759         8040
+```
 
 NOTE: Velocities in AA are for Earth/Moon barycenter
       (a very minor offset) see AA 1999 page E3
-
-               x vel (AU/day) y vel (AU/day)   z vel (AU/day)
-    xyz:      -0.014947268   -0.0083148382    -0.0036068576
-    AA:       -0.01494574    -0.00831185      -0.00360365
-    abs(err):  0.000001583    0.0000029886     0.0000032076
-    abs(err)
-     (km/sec): 0.00265        0.00519          0.00557
-
+```plain
+           x vel (AU/day) y vel (AU/day)   z vel (AU/day)
+xyz:      -0.014947268   -0.0083148382    -0.0036068576
+AA:       -0.01494574    -0.00831185      -0.00360365
+abs(err):  0.000001583    0.0000029886     0.0000032076
+abs(err)
+ (km/sec): 0.00265        0.00519          0.00557
+```
 
 ### Notes ###
 

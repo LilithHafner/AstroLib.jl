@@ -98,7 +98,7 @@ function co_nutate(jd::AbstractVector{P}, ra::AbstractVector{<:Real},
     d_eps_out = similar(dec, typejd)
     for i in eachindex(jd)
         ra_out[i], dec_out[i],eps_out[i], d_psi_out[i], d_eps_out[i]  =
-        co_nutate(jd[i], ra[i], dec[i])
+            co_nutate(jd[i], ra[i], dec[i])
     end
     return ra_out, dec_out, eps_out, d_psi_out, d_eps_out
 end
