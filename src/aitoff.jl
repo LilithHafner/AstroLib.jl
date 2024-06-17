@@ -57,10 +57,9 @@ julia> x, y = aitoff(227.23, -8.890)
 
 ### Notes ###
 
-See AIPS memo No. 46
-(ftp://ftp.aoc.nrao.edu/pub/software/aips/TEXT/PUBL/AIPSMEMO46.PS), page 4, for
-details of the algorithm.  This version of `aitoff` assumes the projection is
-centered at b=0 degrees.
+See [AIPS memo No. 46](http://www.aips.nrao.edu/TEXT/PUBL/AIPSMEMO46.PS), page 4,
+for details of the algorithm.  This version of `aitoff` assumes the projection is
+centered at `b=0` degrees.
 
 Code of this function is based on IDL Astronomy User's Library.
 """
