@@ -25,7 +25,7 @@ function ellipse2c(focus1::Point, focus2::Point, k; stepvalue=pi/100)
 end
 
 """
-Draw a logo with ellipse and colored circles 
+Draw a logo with ellipse and colored circles
 """
 function draw_logo(fname)
     Drawing(500, 500, fname)
