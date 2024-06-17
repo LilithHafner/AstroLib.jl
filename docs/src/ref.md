@@ -7,7 +7,7 @@ DocTestSetup = :(using AstroLib)
 
 ### Observatory
 
-`AstroLib.jl` defines a new `Observatory` type. This can be used to define a new object holding information about an observing site. It is a [composite type] whose fields are
+`AstroLib.jl` defines a new `Observatory` type. This can be used to define a new object holding information about an observing site. It is a [composite type](https://docs.julialang.org/en/v1/manual/types/#Composite-Types) whose fields are
 
 -   `name` (`String` type): the name of the site
 -   `latitude` (`Float64` type): North-ward latitude of the site in degrees
