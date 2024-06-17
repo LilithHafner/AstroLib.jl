@@ -95,94 +95,94 @@ julia> AstroLib.planets["saturn"].mass
 
 ### Coordinates and positions
 
-[`adstring()`](@ref),
-[`aitoff()`](@ref),
-[`altaz2hadec()`](@ref),
-[`baryvel()`](@ref),
-[`bprecess()`](@ref),
-[`co_aberration()`](@ref),
-[`co_nutate()`](@ref),
-[`co_refract()`](@ref),
-[`eci2geo()`](@ref),
-[`eq2hor()`](@ref),
-[`eqpole()`](@ref),
-[`euler()`](@ref),
-[`gcirc()`](@ref),
-[`geo2eci()`](@ref),
-[`geo2geodetic()`](@ref),
-[`geo2mag()`](@ref),
-[`geodetic2geo()`](@ref),
-[`hadec2altaz()`](@ref),
-[`helio_rv()`](@ref),
-[`helio()`](@ref),
-[`hor2eq()`](@ref),
-[`jprecess()`](@ref),
-[`mag2geo()`](@ref),
-[`mean_obliquity()`](@ref),
-[`planet_coords()`](@ref),
-[`polrec()`](@ref),
-[`posang()`](@ref),
-[`precess()`](@ref),
-[`precess_cd()`](@ref),
-[`precess_xyz()`](@ref),
-[`premat()`](@ref),
-[`radec()`](@ref),
-[`recpol()`](@ref),
-[`true_obliquity()`](@ref),
-[`zenpos()`](@ref)
+- [`adstring()`](@ref)
+- [`aitoff()`](@ref)
+- [`altaz2hadec()`](@ref)
+- [`baryvel()`](@ref)
+- [`bprecess()`](@ref)
+- [`co_aberration()`](@ref)
+- [`co_nutate()`](@ref)
+- [`co_refract()`](@ref)
+- [`eci2geo()`](@ref)
+- [`eq2hor()`](@ref)
+- [`eqpole()`](@ref)
+- [`euler()`](@ref)
+- [`gcirc()`](@ref)
+- [`geo2eci()`](@ref)
+- [`geo2geodetic()`](@ref)
+- [`geo2mag()`](@ref)
+- [`geodetic2geo()`](@ref)
+- [`hadec2altaz()`](@ref)
+- [`helio_rv()`](@ref)
+- [`helio()`](@ref)
+- [`hor2eq()`](@ref)
+- [`jprecess()`](@ref)
+- [`mag2geo()`](@ref)
+- [`mean_obliquity()`](@ref)
+- [`planet_coords()`](@ref)
+- [`polrec()`](@ref)
+- [`posang()`](@ref)
+- [`precess()`](@ref)
+- [`precess_cd()`](@ref)
+- [`precess_xyz()`](@ref)
+- [`premat()`](@ref)
+- [`radec()`](@ref)
+- [`recpol()`](@ref)
+- [`true_obliquity()`](@ref)
+- [`zenpos()`](@ref)
 
 ### Time and date
 
-[`ct2lst()`](@ref),
-[`daycnv()`](@ref),
-[`get_date()`](@ref),
-[`get_juldate()`](@ref),
-[`helio_jd()`](@ref),
-[`jdcnv()`](@ref),
-[`juldate()`](@ref),
-[`month_cnv()`](@ref),
-[`nutate()`](@ref),
-[`ydn2md()`](@ref),
-[`ymd2dn()`](@ref)
+- [`ct2lst()`](@ref)
+- [`daycnv()`](@ref)
+- [`get_date()`](@ref)
+- [`get_juldate()`](@ref)
+- [`helio_jd()`](@ref)
+- [`jdcnv()`](@ref)
+- [`juldate()`](@ref)
+- [`month_cnv()`](@ref)
+- [`nutate()`](@ref)
+- [`ydn2md()`](@ref)
+- [`ymd2dn()`](@ref)
 
 ### Moon and sun
 
-[`moonpos()`](@ref),
-[`mphase()`](@ref),
-[`sunpos()`](@ref),
-[`xyz()`](@ref)
+- [`moonpos()`](@ref)
+- [`mphase()`](@ref)
+- [`sunpos()`](@ref)
+- [`xyz()`](@ref)
 
 ### Utilities
 
-[`airtovac()`](@ref),
-[`calz_unred()`](@ref),
-[`deredd()`](@ref),
-[`flux2mag()`](@ref),
-[`gal_uvw()`](@ref),
-[`imf()`](@ref),
-[`ismeuv()`](@ref),
-[`kepler_solver()`](@ref),
-[`lsf_rotate()`](@ref),
-[`mag2flux()`](@ref),
-[`paczynski()`](@ref),
-[`planck_freq()`](@ref),
-[`planck_wave()`](@ref),
-[`rad2sec()`](@ref),
-[`rhotheta()`](@ref),
-[`sec2rad()`](@ref),
-[`sixty()`](@ref),
-[`sphdist()`](@ref),
-[`ten()`](@ref),
-[`tic_one()`](@ref),
-[`ticpos()`](@ref),
-[`tics()`](@ref),
-[`trueanom()`](@ref),
-[`uvbybeta()`](@ref),
-[`vactoair()`](@ref)
+- [`airtovac()`](@ref)
+- [`calz_unred()`](@ref)
+- [`deredd()`](@ref)
+- [`flux2mag()`](@ref)
+- [`gal_uvw()`](@ref)
+- [`imf()`](@ref)
+- [`ismeuv()`](@ref)
+- [`kepler_solver()`](@ref)
+- [`lsf_rotate()`](@ref)
+- [`mag2flux()`](@ref)
+- [`paczynski()`](@ref)
+- [`planck_freq()`](@ref)
+- [`planck_wave()`](@ref)
+- [`rad2sec()`](@ref)
+- [`rhotheta()`](@ref)
+- [`sec2rad()`](@ref)
+- [`sixty()`](@ref)
+- [`sphdist()`](@ref)
+- [`ten()`](@ref)
+- [`tic_one()`](@ref)
+- [`ticpos()`](@ref)
+- [`tics()`](@ref)
+- [`trueanom()`](@ref)
+- [`uvbybeta()`](@ref)
+- [`vactoair()`](@ref)
 
 ### Miscellaneous (non-astronomy) functions
 
-[`ordinal()`](@ref)
+- [`ordinal()`](@ref)
 
 ## Types and functions organized alphabetically
 
