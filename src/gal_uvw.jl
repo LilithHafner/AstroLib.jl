@@ -35,11 +35,11 @@ end
 
 ### Purpose ###
 
-Calculate the Galactic space velocity \$(u, v, w)\$ of a star.
+Calculate the Galactic space velocity ``(u, v, w)`` of a star.
 
 ### Explanation ###
 
-Calculates the Galactic space velocity \$(u, v, w)\$ of a star given its (1)
+Calculates the Galactic space velocity ``(u, v, w)`` of a star given its (1)
 coordinates, (2) proper motion, (3) parallax, and (4) radial velocity.
 
 ### Arguments ###
@@ -55,8 +55,8 @@ Either scalars or arrays all of the same length can be supplied.
 2. Proper Motion
 
    * `pmra`: proper motion in right ascension in arc units (typically
-     milli-arcseconds/yr).  If given \$\\mu_\\alpha\$ -- proper motion in seconds of
-     time/year -- then this is equal to \$15 \\mu_\\alpha \\cos(\\text{dec})\$.
+     milli-arcseconds/yr).  If given ``μ_α`` -- proper motion in seconds of
+     time/year -- then this is equal to ``15 μ_α \\cos(\\text{dec})``.
    * `pmdec`: proper motion in declination (typically mas/yr).
 
 3. Radial Velocity
@@ -68,22 +68,21 @@ Either scalars or arrays all of the same length can be supplied.
    * `plx`: parallax with same distance units as proper motion measurements
      typically milliarcseconds (mas)
 
-If you know the distance in parsecs, then set `plx` to \$1000/\\text{distance}\$,
+If you know the distance in parsecs, then set `plx` to ``1000/\\text{distance}``,
 if proper motion measurements are given in milli-arcseconds/yr.
 
 There is an additional optional keyword:
 
 * `lsr` (optional boolean keyword): if this keyword is set to `true`, then the
   output velocities will be corrected for the solar motion
-  \$(u, v, w)_\\odot = (-8.5, 13.38, 6.49)\$ (Coşkunoǧlu et al. 2011 MNRAS, 412,
-  1237;
+  ``(u, v, w)_⊙ = (-8.5, 13.38, 6.49)`` (Coşkunoǧlu et al. 2011 MNRAS, 412, 1237;
   DOI:[10.1111/j.1365-2966.2010.17983.x](http://dx.doi.org/10.1111/j.1365-2966.2010.17983.x))
   to the local standard of rest (LSR).  Note that the value of the solar motion
   through the LSR remains poorly determined.
 
 ### Output ###
 
-The 3-tuple \$(u, v, w)\$
+The 3-tuple ``(u, v, w)``
 
 * ``u``: velocity (km/s) positive toward the Galactic *anti*center
 * ``v``: velocity (km/s) positive in the direction of Galactic rotation
@@ -92,7 +91,7 @@ The 3-tuple \$(u, v, w)\$
 ### Method ###
 
 Follows the general outline of Johnson & Soderblom (1987, AJ, 93, 864;
-DOI:[10.1086/114370](http://dx.doi.org/10.1086/114370)) except that \$u\$ is
+DOI:[10.1086/114370](http://dx.doi.org/10.1086/114370)) except that ``u`` is
 positive outward toward the Galactic *anti*center, and the J2000 transformation
 matrix to Galactic coordinates is taken from the introduction to the Hipparcos
 catalog.
@@ -133,7 +132,7 @@ function gal_uvw(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                  lsr::Bool=false) where {R<:Real}
     if !(length(ra) == length(dec) == length(pmra) ==
          length(pmdec) == length(vrad) == length(plx))
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "ra, dec, pmra, pmdec, vrad, and plx arrays must all have the same length"))
     end
     typer = float(R)

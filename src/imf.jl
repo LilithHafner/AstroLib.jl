@@ -4,7 +4,7 @@ function imf(mass::AbstractVector{T}, expon::AbstractVector{T},
              mass_range::AbstractVector{T}) where {T<:AbstractFloat}
     ne_comp = length(expon)
     if length(mass_range) != ne_comp + 1
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "Length of array mass_range is not one more than that of expon"))
     end
     integ = Vector{T}(undef, ne_comp)

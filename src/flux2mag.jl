@@ -22,8 +22,7 @@ This is the reverse of `mag2flux`.
 
 ### Arguments ###
 
-* `flux`: the flux to be converted in magnitude, expressed in
-  erg/(s cm² Å).
+* `flux`: the flux to be converted in magnitude, expressed in erg/(s cm² Å).
 * `zero_point`: the zero point level of the magnitude.  If not
   supplied then defaults to 21.1 (Code et al 1976).  Ignored if the `ABwave`
   keyword is supplied

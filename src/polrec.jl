@@ -39,8 +39,8 @@ and `angle`.
 
 ### Example ###
 
-Get rectangular coordinates \$(x, y)\$ of the point with polar coordinates \$(r,
-\\varphi) = (1.7, 227)\$, with angle \$\\varphi\$ expressed in degrees.
+Get rectangular coordinates ``(x, y)`` of the point with polar coordinates
+``(r, φ) = (1.7, 227)``, with angle ``φ`` expressed in degrees.
 
 ```jldoctest
 julia> using AstroLib
@@ -59,7 +59,7 @@ polrec(r_a::Tuple{Real, Real}; degrees::Bool=false) = polrec(r_a...,
 function polrec(r::AbstractArray{R}, a::AbstractArray{A};
                 degrees::Bool=false) where {R<:Real, A<:Real}
     if length(r) != length(a)
-        throw(ArgumentError("r and a arrays should be of the same length"))
+        throw(DimensionMismatch("r and a arrays should be of the same length"))
     end
     typer = float(R)
     x = similar(r, typer)

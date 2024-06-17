@@ -81,7 +81,7 @@ Wayne Warren (Raytheon ITSS) has compared the results of this algorithm with the
 FORTRAN subroutines in the STARLINK SLALIB library (see
 http://star-www.rl.ac.uk/).
 
-```
+```plain
                                                  Time Diff (sec)
      Date               RA(2000)   Dec(2000)  STARLINK      IDL
 

@@ -29,10 +29,12 @@ across the disk.
 * `delta_v`: the step increment (in km/s) in the output rotation kernel
 * `v_sin_i`: the rotational velocity projected along the line of sight (km/s)
 * `epsilon` (optional numeric argument): the limb-darkening coefficient, default = 0.6 which
-  is typical for photospheric lines.  The specific intensity \$I\$ at any angle \$\\theta\$
-  from the specific intensity \$I_{\\text{cen}}\$ at the center of the disk is given by:
+  is typical for photospheric lines.  The specific intensity ``I`` at any angle ``θ``
+  from the specific intensity ``I_{\\text{cen}}`` at the center of the disk is given by:
 
-  `` I = I_{\\text{cen}}\\cdot(1 - \\varepsilon\\cdot(1 - \\cos(\\theta)))``
+  ```math
+  I = I_{\\text{cen}} ⋅ (1 - ε ⋅ (1 - \\cos(θ)))
+  ```
 
 ### Output ###
 
@@ -50,11 +52,11 @@ The 2-tuple (`velocity_grid`, `lsf`):
 ### Example ###
 
 Plot the line spread function for a star rotating at 90 km/s in velocity space
-every 3 km/s.  Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for
+every 3 km/s.  Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for
 plotting.
 
 ```julia
-using PyPlot
+using Plots
 plot(lsf_rotate(3, 90)...)
 ```
 

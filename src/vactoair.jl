@@ -23,14 +23,14 @@ Converts vacuum wavelengths to air wavelengths.
 ### Explanation ###
 
 Corrects for the index of refraction of air under standard conditions.
-Wavelength values below \$2000 Å\$ will not be altered.  Uses relation of Ciddor
-(1996).
+Wavelength values below ``2000 Å`` will not be altered.  Uses relation of
+Ciddor (1996).
 
 ### Arguments ###
 
 * `wave_vacuum`: vacuum wavelength in angstroms.  Wavelengths are corrected for the index of
-  refraction of air under standard conditions.  Wavelength values below \$2000 Å\$ will
-  *not* be altered, take care within \$[1 Å, 2000 Å]\$.
+  refraction of air under standard conditions.  Wavelength values below ``2000 Å`` will
+  *not* be altered, take care within ``[1 Å, 2000 Å]``.
 
 ### Output ###
 
@@ -39,7 +39,7 @@ Air wavelength in angstroms.
 ### Method ###
 
 Uses relation of Ciddor (1996), Applied Optics 35, 1566
-(http://adsabs.harvard.edu/abs/1996ApOpt..35.1566C).
+(<http://adsabs.harvard.edu/abs/1996ApOpt..35.1566C>).
 
 ### Example ###
 

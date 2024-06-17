@@ -88,7 +88,7 @@ co_nutate(jd::Real, ra::Real, dec::Real) =
 function co_nutate(jd::AbstractVector{P}, ra::AbstractVector{<:Real},
                    dec::AbstractVector{<:Real}) where {P<:Real}
     if !(length(jd) == length(ra) == length(dec))
-        throw(ArgumentError("jd, ra and dec vectors should be of the same length"))
+        throw(DimensionMismatch("jd, ra and dec vectors should be of the same length"))
     end
     typejd = float(P)
     ra_out  = similar(jd,  typejd)
@@ -98,7 +98,7 @@ function co_nutate(jd::AbstractVector{P}, ra::AbstractVector{<:Real},
     d_eps_out = similar(dec, typejd)
     for i in eachindex(jd)
         ra_out[i], dec_out[i],eps_out[i], d_psi_out[i], d_eps_out[i]  =
-        co_nutate(jd[i], ra[i], dec[i])
+            co_nutate(jd[i], ra[i], dec[i])
     end
     return ra_out, dec_out, eps_out, d_psi_out, d_eps_out
 end

@@ -70,9 +70,10 @@ julia> ha, dec = altaz2hadec(ten(59,05,10), ten(133,18,29), 43.07833)
 (336.6828582472844, 19.182450965120402)
 ```
 The widely available XEPHEM code gets:
-
-    Hour Angle = 336.683
-    Declination = 19.1824
+```plain
+Hour Angle = 336.683
+Declination = 19.1824
+```
 
 ### Notes ###
 
@@ -89,7 +90,7 @@ altaz2hadec(altaz::Tuple{Real, Real}, lat::Real) = altaz2hadec(altaz..., lat)
 function altaz2hadec(alt::AbstractArray{R}, az::AbstractArray{<:Real},
                      lat::AbstractArray{<:Real}) where {R<:Real}
     if !(length(alt) == length(az) == length(lat))
-        throw(ArgumentError("alt, az, and lat arrays must have the same length"))
+        throw(DimensionMismatch("alt, az, and lat arrays must have the same length"))
     end
     typealt = float(R)
     ha  = similar(alt, typealt)

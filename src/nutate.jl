@@ -103,10 +103,11 @@ all terms larger than 0.0003".
   ```
 
 - Plot the daily nutation in longitude and obliquity during the 21st century.
-  Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
+  Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
   ```julia
-  using PyPlot
+  using Dates
+  using Plots
   years = DateTime(2000):DateTime(2100);
   long, obl = nutate(jdcnv.(years));
   plot(years, long); plot(years, obl)

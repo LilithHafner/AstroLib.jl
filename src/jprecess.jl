@@ -21,7 +21,7 @@ const Mjprec =
 function _jprecess(ra::T, dec::T, parallax::T, radvel::T, epoch::T,
                    muradec::Vector{T}) where {T<:AbstractFloat}
     if length(muradec) != 2
-        throw(DomainError("muradec must have length 2"))
+        throw(DomainError(muradec, "muradec must have length 2"))
     end
     sinra, cosra  = sincos(deg2rad(ra))
     sindec, cosdec = sincos(deg2rad(dec))
@@ -98,7 +98,7 @@ function jprecess(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                   radvel::AbstractArray{<:Real}=zeros(R, length(ra))) where {R<:Real}
     if !(length(ra) == length(dec) == size(muradec)[2] == length(parallax) == length(radvel))
         # TODO write more helpful error message
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "ra, dec, muradec[:,2], parallax, and radvel must have the same length"))
     end
     typer = float(R)
@@ -114,7 +114,7 @@ end
 function jprecess(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                   epoch::Real=1950.0) where {R<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typer = float(R)
     ra2000  = similar(ra, typer)
@@ -221,4 +221,4 @@ and equinox of J2000.0" -- from the Explanatory Supplement (1992), p. 180
 
 Code of this function is based on IDL Astronomy User's Library.
 """
-jprecess
+function jprecess end

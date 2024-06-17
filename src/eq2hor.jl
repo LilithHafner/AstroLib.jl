@@ -132,7 +132,7 @@ julia> adstring(az_o, alt_o)
 
 Code of this function is based on IDL Astronomy User's Library.
 """
-eq2hor
+function eq2hor end
 
 # TODO: Make eq2hor type-stable, which it isn't currently because of keyword arguments
 # Note that the inner function `_eq2hor` is type stable

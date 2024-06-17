@@ -39,14 +39,14 @@ Coordinates can be given also as a 2-tuple `(l, b)`.
 2-tuple `(x, y)`.
 
 * `x`: x coordinate, same number of elements as `l`.  `x` is normalized to be in
-  \$[-180, 180]\$.
+  ``[-180, 180]``.
 * `y`: y coordinate, same number of elements as `l`.  `y` is normalized to be in
-  \$[-90, 90]\$.
+  ``[-90, 90]``.
 
 ### Example ###
 
-Get \$(x ,y)\$ Aitoff coordinates of Sirius, whose Galactic coordinates are
-\$(227.23, -8.890)\$.
+Get ``(x ,y)`` Aitoff coordinates of Sirius, whose Galactic coordinates are
+``(227.23, -8.890)``.
 
 ```jldoctest
 julia> using AstroLib
@@ -57,10 +57,9 @@ julia> x, y = aitoff(227.23, -8.890)
 
 ### Notes ###
 
-See AIPS memo No. 46
-(ftp://ftp.aoc.nrao.edu/pub/software/aips/TEXT/PUBL/AIPSMEMO46.PS), page 4, for
-details of the algorithm.  This version of `aitoff` assumes the projection is
-centered at b=0 degrees.
+See [AIPS memo No. 46](http://www.aips.nrao.edu/TEXT/PUBL/AIPSMEMO46.PS), page 4,
+for details of the algorithm.  This version of `aitoff` assumes the projection is
+centered at `b=0` degrees.
 
 Code of this function is based on IDL Astronomy User's Library.
 """
@@ -70,7 +69,7 @@ aitoff(lb::Tuple{Real, Real}) = aitoff(lb...)
 
 function aitoff(l::AbstractArray{L}, b::AbstractArray{B}) where {L<:Real,B<:Real}
     if length(l) != length(b)
-        throw(ArgumentError("l and b arrays must have the same length"))
+        throw(DimensionMismatch("l and b arrays must have the same length"))
     end
     typel = float(L)
     x = similar(l, typel)

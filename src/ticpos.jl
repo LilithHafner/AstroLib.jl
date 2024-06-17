@@ -88,7 +88,7 @@ The 3-tuple `(ticsize, incr, units)`:
 
 ### Example ###
 
-Suppose a 512 x 512 image array corresponds to 0.2 x 0.2 degrees on the sky.
+Suppose a 512 × 512 image array corresponds to 0.2 × 0.2 degrees on the sky.
 A tic mark is desired in round angular units, approximately every 75 pixels.
 Then
 

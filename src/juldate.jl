@@ -20,8 +20,8 @@ days since epoch `1858-11-16T12:00:00` (Reduced Julian Days = Julian Days -
 
 ### Argument ###
 
-* `date`: date in Julian Calendar, UTC standard.  Each element can be given in `DateTime`
-  type or anything that can be converted to that type.
+* `date`: date in Julian Calendar, UTC standard.  Each element can be given
+  in `DateTime` type or anything that can be converted to that type.
 
 ### Output ###
 
@@ -63,7 +63,7 @@ function juldate(dt::DateTime)
         Dates.second(dt), Dates.millisecond(dt)
 
     if year == 0
-        throw(DomainError("There is no year zero in Julian Calendar"))
+        throw(DomainError(year, "There is no year zero in Julian Calendar"))
     end
     if year < 0
         year += 1

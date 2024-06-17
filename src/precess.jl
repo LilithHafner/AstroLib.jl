@@ -68,7 +68,7 @@ julia> adstring(precess(ra, dec, 2000, 1985), precision=1)
 " 02 16 22.73  +89 11 47.3"
 ```
 
-Precess the B1950 coordinates of Eps Ind (RA = 21h 59m,33.053s, DEC = (-56d,
+Precess the B1950 coordinates of Eps Ind (RA = 21h 59m,33.053s, DEC = -56d,
 59', 33.053") to equinox B1975.
 
 ```jldoctest
@@ -113,7 +113,7 @@ function precess(ra::AbstractArray{R}, dec::AbstractArray{D}, equinox1::Real,
                  equinox2::Real; FK4::Bool=false,
                  radians::Bool=false) where {R<:Real, D<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typera = float(R)
     ra_out  = similar(ra,  typera)

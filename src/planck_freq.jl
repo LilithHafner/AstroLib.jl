@@ -20,7 +20,7 @@ Return the spectral radiance of a black body per unit frequency using [Planck's
 law](https://en.wikipedia.org/wiki/Planck%27s_law)
 
 ```math
-B_\\nu(\\nu, T) = \\frac{2h\\nu ^3}{c^2} \\frac{1}{e^\\frac{h\\nu}{k_\\mathrm{B}T} - 1}
+B_\\nu(\\nu, T) = \\frac{2h\\nu^3}{c^2} \\frac{1}{e^\\frac{h\\nu}{k_\\mathrm{B}T} - 1}
 ```
 
 ### Arguments ###
@@ -34,13 +34,13 @@ The spectral radiance of the black body, in units of W/(sr·m²·Hz).
 
 ### Example ###
 
-Plot the spectrum of a black body in \$[10^{12}, 10^{15.4}]\$ Hz at \$8000\$ K.
-Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
+Plot the spectrum of a black body in ``[10^{12}, 10^{15.4}]`` Hz at 8000 K.
+Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
 ```julia
-using PyPlot
+using Plots
 frequency = exp10.(range(12, stop=15.4, length=1000));
-temperature = ones(frequency)*8000;
+temperature = ones(size(frequency)) * 8000;
 flux = planck_freq.(frequency, temperature);
 plot(frequency, flux)
 ```

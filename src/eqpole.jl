@@ -14,12 +14,12 @@ end
 
 ### Purpose ###
 
-Convert right ascension \$l\$ and declination \$b\$ to coordinate \$(x, y)\$
+Convert right ascension ``l`` and declination ``b`` to coordinate ``(x, y)``
 using an equal-area polar projection.
 
 ### Explanation ###
 
-The output \$x\$ and \$y\$ coordinates are scaled to be in the range \$[-90, 90]\$
+The output ``x`` and ``y`` coordinates are scaled to be in the range ``[-90, 90]``
 and to go from equator to pole to equator.  Output map points can be
 centered on the north pole or south pole.
 
@@ -33,7 +33,7 @@ centered on the north pole or south pole.
 
 ### Output ###
 
-The 2-tuple \$(x, y)\$:
+The 2-tuple ``(x, y)``:
 
 * ``x`` coordinate, same number of elements as right ascension, normalized to be
   in the range ``[-90, 90]``.
@@ -62,7 +62,7 @@ eqpole(l::Real, b::Real; southpole::Bool=false) =
 function eqpole(l::AbstractArray{L}, b::AbstractArray{<:Real};
                 southpole::Bool=false) where {L<:Real}
     if length(l) != length(b)
-        throw(ArgumentError("l and b arrays should be of the same length"))
+        throw(DimensionMismatch("l and b arrays should be of the same length"))
     end
     typel = float(L)
     x = similar(l, typel)

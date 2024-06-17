@@ -28,8 +28,8 @@ Return the illuminated fraction of the Moon at given Julian date(s).
 
 ### Output ###
 
-The illuminated fraction \$k\$ of Moon's disk, with \$0 \\leq k \\leq 1\$. \$k
-= 0\$ indicates a new moon, while \$k = 1\$ stands for a full moon.
+The illuminated fraction ``k`` of Moon's disk, with ``0 ≤ k ≤ 1``. ``k = 0``
+indicates a new moon, while ``k = 1`` stands for a full moon.
 
 ### Method ###
 
@@ -42,11 +42,12 @@ determine the illuminated fraction.
 ### Example ###
 
 Plot the illuminated fraction of the Moon for every day in January 2018 with a
-hourly sampling.  Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for
+hourly sampling.  Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for
 plotting
 
 ```julia
-using PyPlot
+using Dates
+using Plots
 points = DateTime(2018,01,01):Dates.Hour(1):DateTime(2018,01,31,23,59,59);
 plot(points, mphase.(jdcnv.(points)))
 ```

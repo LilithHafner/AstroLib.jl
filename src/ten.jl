@@ -52,8 +52,9 @@ The decimal conversion of the sexagesimal numbers provided is returned.
 ### Method ###
 
 The formula used for the conversion is
-
-\$\$\\mathrm{sign}(\\mathrm{deg})·\\left(|\\mathrm{deg}| + \\frac{\\mathrm{min}}{60} + \\frac{\\mathrm{sec}}{3600}\\right)\$\$
+```math
+\\mathrm{sign}(\\mathrm{deg})·\\left(|\\mathrm{deg}| + \\frac{\\mathrm{min}}{60} + \\frac{\\mathrm{sec}}{3600}\\right)
+```
 
 ### Example ###
 

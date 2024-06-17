@@ -18,7 +18,7 @@ const record = Dict(1=>"mercury", 2=>"venus", 3=>"earth", 4=>"mars", 5=>"jupiter
 function _helio(jd::T, num::Integer, radians::Bool) where {T<:AbstractFloat}
 
     if num<1 || num>9
-        throw(DomainError("Input should be an integer in the range 1:9 denoting planet number"))
+        throw(DomainError(num, "Input should be an integer in the range 1:9 denoting planet number"))
     end
     t = (jd - J2000) / JULIANCENTURY
     body = record[num]
@@ -116,7 +116,7 @@ helio(jd::Real, num::Integer, radians::Bool=false) =
 function helio(jd::AbstractVector{P}, num::AbstractVector{<:Real},
                radians::Bool = false) where {P<:Real}
     if length(jd) != length(num)
-        throw(ArgumentError("jd and num vectors should be of the same length"))
+        throw(DimensionMismatch("jd and num vectors should be of the same length"))
     end
     typejd = float(P)
     hrad_out = similar(jd,  typejd)

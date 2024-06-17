@@ -127,7 +127,7 @@ function geodetic2geo(lat::AbstractArray{LA}, long::AbstractArray{<:Real},
                       alt::AbstractArray{<:Real}, eq::Real,
                       pol::Real) where {LA<:Real}
     if !(length(lat) == length(long) == length(alt))
-        throw(ArgumentError("lat, long, and alt arrays must have the same length"))
+        throw(DimensionMismatch("lat, long, and alt arrays must have the same length"))
     end
     typela  = float(LA)
     outlat  = similar(lat, typela)
@@ -154,7 +154,7 @@ function geodetic2geo(lat::AbstractArray{LA},
                       alt::AbstractArray{<:Real},
                       planet::AbstractString="earth") where {LA<:Real}
     if !(length(lat) == length(long) == length(alt))
-        throw(ArgumentError("lat, long, and alt arrays must have the same length"))
+        throw(DimensionMismatch("lat, long, and alt arrays must have the same length"))
     end
     typela  = float(LA)
     outlat  = similar(lat, typela)

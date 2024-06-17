@@ -38,17 +38,17 @@ Paczyński formula
 A(u) = \\frac{u^2 + 2}{u\\sqrt{u^2 + 4}}
 ```
 
-where \$u\$ is the projected distance between the lens and the source in units
+where ``u`` is the projected distance between the lens and the source in units
 of [Einstein radii](https://en.wikipedia.org/wiki/Einstein_radius).
 
-In order to speed up calculations for extreme values of \$u\$, the following
-asyntotic expressions for \$A(u)\$ are used:
+In order to speed up calculations for extreme values of ``u``, the following
+asyntotic expressions for ``A(u)`` are used:
 
 ```math
 A(u) =
 \\begin{cases}
- 1/u & |u| \\ll 1 \\\\
- \\text{sgn}(u) & |u| \\gg 1
+ 1/u & |u| ≪ 1 \\\\
+ \\text{sgn}(u) & |u| ≫ 1
 \\end{cases}
 ```
 
@@ -63,12 +63,10 @@ The microlensing amplification for the given distance.
 
 ### Example ###
 
-Calculate the microlensing amplification for \$u = 10^{-10}\$, \$10^{-1}\$,
-\$1\$, \$10\$, \$10^{10}\$:
+Calculate the microlensing amplification for ``u = 10^{-10}, 10^{-1},
+1, 10, 10^{10}``:
 
 ```jldoctest
-julia> using AstroLib
-
 julia> paczynski.([1e-10, 1e-1, 1, 10, 1e10])
 5-element Vector{Float64}:
   1.0e10
@@ -80,7 +78,7 @@ julia> paczynski.([1e-10, 1e-1, 1, 10, 1e10])
 
 ### Notes ###
 
-The expression of \$A(u)\$ of microlensing amplification has been given by
+The expression of ``A(u)`` of microlensing amplification has been given by
 Bohdan Paczyński in
 
 * Paczynski, B. 1986, ApJ, 304, 1.

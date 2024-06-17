@@ -8,9 +8,10 @@ An extensive error testing suite ensures old fixed bugs will not be brought back
 
 ## Installation
 
-AstroLib is available for Julia 1.0 and later versions, and can be installed with [Julia](https://github.com/julialang/julia.jl)'s built-in package manager. In a Julia session run the command
+AstroLib is available for Julia 1.0 and later versions, and can be installed with [Julia](https://github.com/julialang/julia.jl)'s built-in package manager. In a Julia session run the commands
 
-```julia
+```julia-repl
+julia> import Pkg
 julia> Pkg.update()
 julia> Pkg.add("AstroLib")
 ```
@@ -19,7 +20,7 @@ Older versions are also available for Julia 0.4-0.6.
 
 Note that, in order to work, a few functions require external files, which are automatically downloaded when building the package. Should these files be missing for some reason, you will be able to load the package but some functions may not work properly. You can manually build the package with
 
-```julia
+```julia-repl
 julia> Pkg.build("AstroLib")
 ```
 
@@ -33,11 +34,11 @@ using AstroLib
 
 Many functions in `AstroLib.jl` are compatible with [Measurements.jl](https://github.com/giordano/Measurements.jl) package, which allows you to define quantities with uncertainty and propagate the error when performing calculations according to [propagation of uncertainty rules](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). For example:
 
-```julia
+```jldoctest
 julia> using AstroLib, Measurements
 
 julia> mag2flux(12.54 ± 0.03)
-3.499451670283562e-14 ± 9.669342299577655e-16
+3.499e-14 ± 9.7e-16
 ```
 
 ## How Can I Help?
@@ -56,19 +57,19 @@ This project is a work-in-progress, only few procedures have been translated so 
 
 Every function provided has detailed documentation that can be [accessed](http://docs.julialang.org/en/stable/manual/documentation/#accessing-documentation) at Julia REPL with
 
-```julia
+```julia-repl
 julia> ?FunctionName
 ```
 
 or with
 
-```julia
+```julia-repl
 julia> @doc FunctionName
 ```
 
 ## Related Projects
 
-This is not the only effort to bundle astronomical functions written in Julia language. Other packages useful for more specific purposes are available at [JuliaAstro](https://juliaastro.github.io/). A list of other packages is available [here](https://github.com/svaksha/Julia.jl/blob/master/Astronomy.md).
+This is not the only effort to bundle astronomical functions written in Julia language. Other packages useful for more specific purposes are available at [JuliaAstro](https://juliaastro.github.io/).
 
 Because of this, some of IDL AstroLib’s utilities are not provided in `AstroLib.jl` as they are already present in other Julia packages. Here is a list of such utilities:
 

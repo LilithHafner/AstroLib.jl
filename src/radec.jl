@@ -14,7 +14,7 @@ function _radec(ra::T, dec::T, hours::Bool) where {T<:AbstractFloat}
 end
 
 """
-    radec(ra::Real, dec::Real[, hours=true]) -> ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds
+    radec(ra::Real, dec::Real[, hours=false]) -> ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds
 
 ### Purpose ###
 
@@ -37,8 +37,9 @@ degrees for declination.
 ### Output ###
 
 A 6-tuple of `AbstractFloat`:
-
-    (ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds)
+```
+(ra_hours, ra_minutes, ra_seconds, dec_degrees, dec_minutes, dec_seconds)
+```
 
 If `ra` and `dec` are arrays, also each element of the output 6-tuple are arrays
 of the same dimension.
@@ -61,7 +62,7 @@ radec(ra::Real, dec::Real; hours::Bool=false) =
 function radec(ra::AbstractArray{R}, dec::AbstractArray{D};
                hours::Bool=false) where {R<:Real, D<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typera = float(R)
     ra_hr   = similar(ra, typera)

@@ -5,6 +5,7 @@ function _uvbybeta(by::T, m1::T, c1::T, hbeta::T, eby_in::T,
     # Rm1 = -0.33 & Rc1 = 0.19 & Rub = 1.53
     if n < 1 || n > 8
         throw(DomainError(
+            n,
             "Input should be an integer in the range 1:8, giving approximate
             stellar classification"))
     end

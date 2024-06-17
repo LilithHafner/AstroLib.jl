@@ -19,11 +19,14 @@ struct Observatory
     longitude::Float64
     altitude::Float64
     tz::Float64 # There are non-integer time zones
+
     # Define constructor that automatically converts longitude and latitude with
     # "ten", for convenience.
     Observatory(name, lat, long, alt, tz) =
-        new(String(name), Float64(ten(lat)), Float64(ten(long)),
-            Float64(float(alt)), Float64(ten(tz)))
+        new(String(name),
+            Float64(ten(lat)), Float64(ten(long)),
+            Float64(float(alt)),
+            Float64(ten(tz)))
 end
 
 # New type representation
@@ -33,8 +36,8 @@ function show(io::IO, obs::Observatory)
     println(io, "longitude:   ", obs.longitude, "°E")
     println(io, "altitude:    ", obs.altitude, " m")
     tzdec, tzint = modf(obs.tz)
-    print(io,   "time zone:   ", @sprintf("UTC%+d", tzint),
-          tzdec == 0 ? "" : @sprintf(":%d", abs(tzdec*60)))
+    tzstr = tzdec == 0 ? "" : @sprintf(":%d", abs(tzdec*60))
+    print(io,   "time zone:   ", @sprintf("UTC%+d", tzint), tzstr)
 end
 
 ##### Planet
@@ -65,7 +68,7 @@ Position characteristics (epoch J2000):
 * `per_long`: longitude of perihelion in degrees
 * `mean_long`: mean longitude in degrees
 """
-struct Planet
+Base.@kwdef struct Planet
     name::String
     radius::Float64
     eqradius::Float64
@@ -82,18 +85,18 @@ end
 
 # New type representation
 function show(io::IO, pl::Planet)
-    println(io, "Planet:                    ", uppercasefirst(pl.name))
-    println(io, "mean radius:               ", pl.radius, " m")
-    println(io, "equatorial radius:         ", pl.eqradius, " m")
-    println(io, "polar radius:              ", pl.polradius, " m")
-    println(io, "mass:                      ", pl.mass, " kg")
-    println(io, "eccentricity:              ", pl.ecc)
-    println(io, "semi-major axis:           ", pl.axis, " m")
-    println(io, "period:                    ", pl.period, " s")
-    println(io, "inclination                ", pl.inc, " °")
-    println(io, "longitude of ascending node", pl.asc_long, " °")
-    println(io, "longitude of perihelion    ", pl.per_long, " °")
-    print(io,   "mean longitude             ", pl.mean_long, " °")
+    println(io, "Planet:                      ", uppercasefirst(pl.name))
+    println(io, "mean radius:                 ", pl.radius, " m")
+    println(io, "equatorial radius:           ", pl.eqradius, " m")
+    println(io, "polar radius:                ", pl.polradius, " m")
+    println(io, "mass:                        ", pl.mass, " kg")
+    println(io, "eccentricity:                ", pl.ecc)
+    println(io, "semi-major axis:             ", pl.axis, " m")
+    println(io, "period:                      ", pl.period, " s")
+    println(io, "inclination:                 ", pl.inc, " °")
+    println(io, "longitude of ascending node: ", pl.asc_long, " °")
+    println(io, "longitude of perihelion:     ", pl.per_long, " °")
+    print(io,   "mean longitude:              ", pl.mean_long, " °")
 end
 
 export Observatory, Planet

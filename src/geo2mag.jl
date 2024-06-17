@@ -90,7 +90,7 @@ geo2mag(lat::Real, long::Real, year::Real=Dates.year(Dates.now())) =
 function geo2mag(lat::AbstractArray{LA}, long::AbstractArray{<:Real},
                  year::Real=Dates.year(Dates.now())) where {LA<:Real}
     if length(lat) != length(long)
-        throw(ArgumentError("lat and long arrays should be of the same length"))
+        throw(DimensionMismatch("lat and long arrays should be of the same length"))
     end
     typela   = float(LA)
     maglat   = similar(lat, typela)

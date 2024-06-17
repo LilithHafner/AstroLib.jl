@@ -65,7 +65,7 @@ function precess_xyz(x::AbstractArray{X}, y::AbstractArray{<:Real},
                      z::AbstractArray{<:Real}, equinox1::Real,
                      equinox2::Real) where {X<:Real}
     if !(length(x) == length(y) == length(z))
-        throw(ArgumentError("x, y, z arrays should be of the same length"))
+        throw(DimensionMismatch("x, y, z arrays should be of the same length"))
     end
     typex = float(X)
     x_out = similar(x, typex)
