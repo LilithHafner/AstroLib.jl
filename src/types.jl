@@ -13,7 +13,7 @@ Type holding information about an observing site.  Its fields are:
 * `altitude`: altitude of the site in meters
 * `tz`: the number of hours of offset from UTC
 """
-Base.@kwdef struct Observatory
+struct Observatory
     name::String
     latitude::Float64
     longitude::Float64
@@ -22,10 +22,10 @@ Base.@kwdef struct Observatory
 
     # Define constructor that automatically converts longitude and latitude with
     # "ten", for convenience.
-    Observatory(name, lat, long, altitude, tz) =
+    Observatory(name, lat, long, alt, tz) =
         new(String(name),
             Float64(ten(lat)), Float64(ten(long)),
-            Float64(float(altitude)),
+            Float64(float(alt)),
             Float64(ten(tz)))
 end
 
