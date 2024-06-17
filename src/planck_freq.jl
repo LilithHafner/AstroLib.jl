@@ -35,12 +35,12 @@ The spectral radiance of the black body, in units of W/(sr·m²·Hz).
 ### Example ###
 
 Plot the spectrum of a black body in ``[10^{12}, 10^{15.4}]`` Hz at 8000 K.
-Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
+Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
 ```julia
-using PyPlot
+using Plots
 frequency = exp10.(range(12, stop=15.4, length=1000));
-temperature = ones(frequency)*8000;
+temperature = ones(size(frequency)) * 8000;
 flux = planck_freq.(frequency, temperature);
 plot(frequency, flux)
 ```

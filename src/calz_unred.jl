@@ -53,15 +53,15 @@ Estimate how a flat galaxy spectrum (in wavelength) between ``1200 Å`` and
 
 ```julia
 wave = collect(1200:50:3150);
-flux = ones(wave);
+flux = ones(size(wave));
 flux_new = calz_unred.(wave, flux, -0.1);
 ```
 
 Using a plotting tool you can visualize the unreddend flux.  For example, with
-[PyPlot.jl](https://github.com/JuliaPy/PyPlot.jl)
+[Plots.jl](https://github.com/JuliaPlots/Plots.jl)
 
 ```julia
-using PyPlot
+using Plots
 plot(wave, flux_new)
 ```
 

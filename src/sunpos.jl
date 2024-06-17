@@ -124,10 +124,10 @@ by CD Pike, which was adapted from a FORTRAN routine by B. Emerson (RGO).
 
 - Plot the apparent right ascension, in hours, and declination of the Sun, in
   degrees, for every day in 2016.  Use
-  [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
+  [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
   ```julia
-  using PyPlot
+  using Plots
   using Dates
 
   days = DateTime(2016):Day(1):DateTime(2016, 12, 31);

@@ -189,10 +189,11 @@ difference in the position calculation.
   This is within 1" from the position given in the Astronomical Almanac.
 
 - Plot the Earth-moon distance during 2016 with sampling of 6 hours.  Use
-  [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting
+  [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting
 
   ```julia
-  using PyPlot
+  using Dates
+  using Plots
   points = DateTime(2016):Dates.Hour(6):DateTime(2017);
   plot(points, moonpos(jdcnv.(points))[3])
   ```

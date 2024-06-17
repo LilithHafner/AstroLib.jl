@@ -57,10 +57,10 @@ date(s) specified by `jd`.
 
 - Plot two cycles of an eccentric orbit, ``e = 0.6``, ``ω = 45°`` for
   both components of a binary star.  Use
-  [PyPlot.jl](https://github.com/JuliaPy/PyPlot.jl) for plotting.
+  [Plots.jl](https://github.com/JuliaPlots/Plots.jl) for plotting.
 
   ```julia
-  using PyPlot
+  using Plots
   φ = range(0, stop=2, length=1000); # Generate 1000 phase points
   plot(φ, helio_rv.(φ, 0, 1, 0, 100, 0.6, 45)) # Plot 1st component
   plot(φ, helio_rv.(φ, 0, 1, 0, 100, 0.6, 45+180)) # Plot 2nd component

@@ -99,10 +99,11 @@ motion ``0 ≤ e ≤ 1``.
 - Plot the eccentric anomaly as a function of mean anomaly for eccentricity
   ``e = 0, 0.5, 0.9``.  Recall that `kepler_solver` gives ``E ∈ [-π, π]``,
   use `mod2pi` to have it in ``[0, 2π]``.  Use
-  [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
+  [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
   ```julia
-  using AstroLib, PyPlot
+  using AstroLib
+  using Plots
   M = range(0, stop=2pi, length=1001)[1:end-1];
   for ecc in (0, 0.5, 0.9)
       plot(M, mod2pi.(kepler_solver.(M, ecc)))

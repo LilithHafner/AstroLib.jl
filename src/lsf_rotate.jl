@@ -52,11 +52,11 @@ The 2-tuple (`velocity_grid`, `lsf`):
 ### Example ###
 
 Plot the line spread function for a star rotating at 90 km/s in velocity space
-every 3 km/s.  Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for
+every 3 km/s.  Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for
 plotting.
 
 ```julia
-using PyPlot
+using Plots
 plot(lsf_rotate(3, 90)...)
 ```
 

@@ -46,15 +46,17 @@ The true anomaly.
 ### Example ###
 
 Plot the true anomaly as a function of mean anomaly for eccentricity
-``e = 0, 0.5, 0.9``.  Use [PyPlot.jl](https://github.com/JuliaPlots/Plots.jl/) for
-plotting.
+``e = 0, 0.5, 0.9``.
+Use [Plots.jl](https://github.com/JuliaPlots/Plots.jl/) for plotting.
 
 ```julia
-using PyPlot
+using Plots
 M = range(0, stop=2pi, length=1001)[1:end-1];
+p = plot()
 for ecc in (0, 0.5, 0.9)
-    plot(M, mod2pi.(trueanom.(kepler_solver.(M, ecc), ecc)))
+    plot!(p, M, mod2pi.(trueanom.(kepler_solver.(M, ecc), ecc)))
 end
+p
 ```
 
 ### Notes ###
