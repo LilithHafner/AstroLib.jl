@@ -116,7 +116,7 @@ helio(jd::Real, num::Integer, radians::Bool=false) =
 function helio(jd::AbstractVector{P}, num::AbstractVector{<:Real},
                radians::Bool = false) where {P<:Real}
     if length(jd) != length(num)
-        throw(ArgumentError("jd and num vectors should be of the same length"))
+        throw(DimensionMismatch("jd and num vectors should be of the same length"))
     end
     typejd = float(P)
     hrad_out = similar(jd,  typejd)

@@ -94,7 +94,7 @@ function bprecess(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                   parallax::AbstractArray{<:Real}=zeros(R, length(ra)),
                   radvel::AbstractArray{<:Real}=zeros(R, length(ra))) where {R<:Real}
     if !(length(ra) == length(dec) == size(muradec, 2) == length(parallax) == length(radvel))
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "ra, dec, muradec[:,2], parallax, and radvel arrays should be of the same length"))
     end
     typer = float(R)
@@ -110,7 +110,7 @@ end
 function bprecess(ra::AbstractArray{R}, dec::AbstractArray{D},
                   epoch::Real=2000.0) where {R<:Real,D<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typer = float(R)
     ra1950  = similar(ra, typer)

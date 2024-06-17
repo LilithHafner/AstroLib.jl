@@ -113,7 +113,7 @@ function precess(ra::AbstractArray{R}, dec::AbstractArray{D}, equinox1::Real,
                  equinox2::Real; FK4::Bool=false,
                  radians::Bool=false) where {R<:Real, D<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typera = float(R)
     ra_out  = similar(ra,  typera)

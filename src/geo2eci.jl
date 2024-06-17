@@ -79,7 +79,7 @@ function geo2eci(lat::AbstractArray{LA}, long::AbstractArray{<:Real},
                  alt::AbstractArray{<:Real},
                  jd::AbstractArray{<:Real}) where {LA<:Real}
     if !(length(lat) == length(long) == length(alt) == length(jd))
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "lat, long, alt, and jd arrays must have the same length"))
     end
     typela = float(LA)

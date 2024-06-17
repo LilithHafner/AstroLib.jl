@@ -64,7 +64,7 @@ recpol(xy::Tuple{Real, Real}; degrees::Bool=false) =
 function recpol(x::AbstractArray{X}, y::AbstractArray{Y};
                 degrees::Bool=false) where {X<:Real, Y<:Real}
     if length(x) != length(y)
-        throw(ArgumentError("x and y arrays must have the same length"))
+        throw(DimensionMismatch("x and y arrays must have the same length"))
     end
     typex = float(X)
     r = similar(x, typex)

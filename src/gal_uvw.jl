@@ -133,7 +133,7 @@ function gal_uvw(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                  lsr::Bool=false) where {R<:Real}
     if !(length(ra) == length(dec) == length(pmra) ==
          length(pmdec) == length(vrad) == length(plx))
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "ra, dec, pmra, pmdec, vrad, and plx arrays must all have the same length"))
     end
     typer = float(R)

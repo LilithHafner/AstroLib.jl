@@ -98,7 +98,7 @@ function jprecess(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                   radvel::AbstractArray{<:Real}=zeros(R, length(ra))) where {R<:Real}
     if !(length(ra) == length(dec) == size(muradec)[2] == length(parallax) == length(radvel))
         # TODO write more helpful error message
-        throw(ArgumentError(
+        throw(DimensionMismatch(
             "ra, dec, muradec[:,2], parallax, and radvel must have the same length"))
     end
     typer = float(R)
@@ -114,7 +114,7 @@ end
 function jprecess(ra::AbstractArray{R}, dec::AbstractArray{<:Real},
                   epoch::Real=1950.0) where {R<:Real}
     if length(ra) != length(dec)
-        throw(ArgumentError("ra and dec arrays should be of the same length"))
+        throw(DimensionMismatch("ra and dec arrays should be of the same length"))
     end
     typer = float(R)
     ra2000  = similar(ra, typer)

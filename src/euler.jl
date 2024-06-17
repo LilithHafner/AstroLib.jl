@@ -100,7 +100,7 @@ euler(aibi::Tuple{Real, Real}, select::Integer; FK4::Bool=false, radians::Bool=f
 function euler(ai::AbstractVector{R}, bi::AbstractVector{<:Real}, select::Integer;
                FK4::Bool=false, radians::Bool=false) where {R<:Real}
     if length(ai) != length(bi)
-        throw(ArgumentError("ai and bi arrays should be of the same length"))
+        throw(DimensionMismatch("ai and bi arrays should be of the same length"))
     end
     typeai = float(R)
     ai_out  = similar(ai,  typeai)

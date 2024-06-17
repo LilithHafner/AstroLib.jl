@@ -94,7 +94,7 @@ mag2geo(lat::Real, long::Real, year::Real=Dates.year(Dates.now())) =
 function mag2geo(lat::AbstractArray{LA}, long::AbstractArray{LO},
                  year::Real=Dates.year(Dates.now())) where {LA<:Real, LO<:Real}
     if length(lat) != length(long)
-        throw(ArgumentError("lat and long arrays should be of the same length"))
+        throw(DimensionMismatch("lat and long arrays should be of the same length"))
     end
     typela   = float(LA)
     geolat   = similar(lat, typela)

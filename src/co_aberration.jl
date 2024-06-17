@@ -86,7 +86,7 @@ co_aberration(jd::Real, ra::Real, dec::Real, eps::Real=NaN) =
 function co_aberration(jd::AbstractVector{R}, ra::AbstractVector{R},
                        dec::AbstractVector{R}, eps::Real=NaN) where {R<:Real}
     if !(length(jd) == length(ra) == length(dec))
-        throw(ArgumentError("jd, ra and dec vectors should be of the same length"))
+        throw(DimensionMismatch("jd, ra and dec vectors should be of the same length"))
     end
     typejd = float(R)
     ra_out  = similar(ra,  typejd)

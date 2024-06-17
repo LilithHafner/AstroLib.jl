@@ -425,7 +425,7 @@ end
 # correlated with the output from imf routine of IDL AstroLib, with
 # differences only in the least significant digits.
 @testset "imf" begin
-    @test_throws ArgumentError @inferred(imf([5], [-6.75], [0.9]))
+    @test_throws DimensionMismatch @inferred(imf([5], [-6.75], [0.9]))
     @test @inferred(imf([0.1, 0.01], [-0.6, -1], [ 0.007, 1.8, 110])) ≈
         [0.49627714725007616, 1.9757149090208912]
     @test imf.([[3],[5]], [[-1.35], [-0.6, -1.7]], [[0.1, 100], [0.007, 1.8, 110]]) ≈

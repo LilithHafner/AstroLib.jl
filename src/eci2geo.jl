@@ -86,7 +86,7 @@ eci2geo(xyz::Tuple{Real, Real, Real}, jd::Real) =
 function eci2geo(x::AbstractArray{X}, y::AbstractArray{<:Real}, z::AbstractArray{<:Real},
                  jd::AbstractArray{<:Real}) where {X<:Real}
     if !(length(x) == length(y) == length(z) == length(jd))
-        throw(ArgumentError("x, y, z, and jd arrays should be of the same length"))
+        throw(DimensionMismatch("x, y, z, and jd arrays should be of the same length"))
     end
     typex = float(X)
     lat  = similar(x, typex)
