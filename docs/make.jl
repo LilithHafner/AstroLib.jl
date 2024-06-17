@@ -1,6 +1,9 @@
 using Documenter, AstroLib
 
 include("pages.jl")
+
+DocMeta.setdocmeta!(AstroLib, :DocTestSetup, :(using AstroLib), recursive=true)
+
 makedocs(
     modules = [AstroLib],
     sitename = "AstroLib",

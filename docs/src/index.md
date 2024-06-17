@@ -34,11 +34,11 @@ using AstroLib
 
 Many functions in `AstroLib.jl` are compatible with [Measurements.jl](https://github.com/giordano/Measurements.jl) package, which allows you to define quantities with uncertainty and propagate the error when performing calculations according to [propagation of uncertainty rules](https://en.wikipedia.org/wiki/Propagation_of_uncertainty). For example:
 
-```julia
+```jldoctest
 julia> using AstroLib, Measurements
 
 julia> mag2flux(12.54 ± 0.03)
-3.499451670283562e-14 ± 9.669342299577655e-16
+3.499e-14 ± 9.7e-16
 ```
 
 ## How Can I Help?

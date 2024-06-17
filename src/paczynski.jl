@@ -67,8 +67,6 @@ Calculate the microlensing amplification for ``u = 10^{-10}, 10^{-1},
 1, 10, 10^{10}``:
 
 ```jldoctest
-julia> using AstroLib
-
 julia> paczynski.([1e-10, 1e-1, 1, 10, 1e10])
 5-element Vector{Float64}:
   1.0e10

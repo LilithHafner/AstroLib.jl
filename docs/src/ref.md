@@ -1,3 +1,6 @@
+```@meta
+DocTestSetup = :(using AstroLib)
+```
 # Reference
 
 ## Data types
@@ -22,7 +25,7 @@ Observatory(name, lat, long, alt, tz)
 
 A predefined list of some observing sites is provided with `AstroLib.observatories` constant. It is a dictionary whose keys are the abbreviated names of the observatories. For example, you can access information of the European Southern Observatory with
 
-```julia
+```jldoctest
 julia> obs = AstroLib.observatories["eso"]
 Observatory: European Southern Observatory
 latitude:    -29.256666666666668°N
@@ -66,7 +69,7 @@ Planet(name, radius, eqradius, polradius, mass, ecc, axis, period)
 
 The list of Solar System planets, from Mercury to Pluto, is available with `AstroLib.planets` dictionary. The keys of this dictionary are the lowercase names of the planets. For example:
 
-```julia
+```jldoctest
 julia> AstroLib.planets["mercury"]
 Planet:                      Mercury
 mean radius:                 2.4397e6 m
