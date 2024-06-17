@@ -24,6 +24,7 @@ function posang(units::Integer, ra1::T, dec1::T, ra2::T, dec2::T) where {T<:Abst
     else
         # In any other case throw an error.
         throw(DomainError(
+            units,
             "units must be 0 (radians), 1 (hours, degrees) or 2 (degrees)"))
     end
     sin_radif, cos_radif = sincos(ra2_rad - ra1_rad)

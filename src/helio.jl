@@ -18,7 +18,7 @@ const record = Dict(1=>"mercury", 2=>"venus", 3=>"earth", 4=>"mars", 5=>"jupiter
 function _helio(jd::T, num::Integer, radians::Bool) where {T<:AbstractFloat}
 
     if num<1 || num>9
-        throw(DomainError("Input should be an integer in the range 1:9 denoting planet number"))
+        throw(DomainError(num, "Input should be an integer in the range 1:9 denoting planet number"))
     end
     t = (jd - J2000) / JULIANCENTURY
     body = record[num]

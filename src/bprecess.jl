@@ -21,7 +21,7 @@ const Mbprec =
 function _bprecess(ra::T, dec::T, parallax::T, radvel::T,
                    epoch::T, muradec::Vector{T}) where {T<:AbstractFloat}
     if length(muradec) != 2
-        throw(DomainError("muradec must have length 2"))
+        throw(DomainError(muradec, "muradec must have length 2"))
     end
     sinra,  cosra  = sincos(deg2rad(ra))
     sindec, cosdec = sincos(deg2rad(dec))

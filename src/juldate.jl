@@ -63,7 +63,7 @@ function juldate(dt::DateTime)
         Dates.second(dt), Dates.millisecond(dt)
 
     if year == 0
-        throw(DomainError("There is no year zero in Julian Calendar"))
+        throw(DomainError(year, "There is no year zero in Julian Calendar"))
     end
     if year < 0
         year += 1

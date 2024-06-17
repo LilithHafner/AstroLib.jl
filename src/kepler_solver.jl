@@ -3,7 +3,7 @@
 
 function kepler_solver(_M::Real, e::Real)
     if e < 0 || e > 1
-        throw(DomainError("eccentricity must be in the range [0, 1]"))
+        throw(DomainError(e, "eccentricity must be in the range [0, 1]"))
     end
     # M must be in the range [-pi, pi], see Markley (1995), page 2.
     M = rem2pi(_M, RoundNearest)

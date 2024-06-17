@@ -4,6 +4,7 @@ function _euler(ai::T, bi::T, select::Integer, FK4::Bool, radians::Bool) where {
 
     if select>6 || select<1
         throw(DomainError(
+            select,
             "Input for coordinate transformation should be an integer in the range 1:6"))
     end
 
