@@ -75,7 +75,7 @@ function sunpos(jd::AbstractVector{J}; radians::Bool=false) where {J<:Real}
 end
 
 sunpos(dt::DateTime; radians::Bool=false) =
-    sunpos(datetime2julian(dt); radians)
+    sunpos(datetime2julian(dt); radians=radians)
 sunpos(dt::AbstractVector{<:DateTime}; radians::Bool=false) =
     sunpos(datetime2julian.(dt); radians)
 
