@@ -77,7 +77,7 @@ end
 sunpos(dt::DateTime; radians::Bool=false) =
     sunpos(datetime2julian(dt); radians=radians)
 sunpos(dt::AbstractVector{<:DateTime}; radians::Bool=false) =
-    sunpos(datetime2julian.(dt); radians)
+    sunpos(datetime2julian.(dt); radians=radians)
 
 """
     sunpos(jd[, radians=false]) -> ra, dec, elong, obliquity
